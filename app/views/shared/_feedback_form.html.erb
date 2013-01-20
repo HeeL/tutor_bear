@@ -1,0 +1,13 @@
+<div class="right">
+  <div style="background-color: #000">
+  <%=form_tag(send_feedback_path, remote: true, id: 'feedback_form') do%>
+    <%= label_tag :from, 'Your E-mail' %>
+    <%= text_field_tag :from, current_user.try(:email), class: 'span4', disabled: !current_user.nil? %>
+    <%= label_tag :text %>
+    <%=text_area_tag :text, nil, rows: 5, cols: 20, class: 'span4'%><br />
+    <%= submit_tag 'Send', class: 'btn-large btn-primary' %>
+    <%= image_tag 'ajax-loader.gif', class: 'loading' %>
+  <% end %>
+ </div>
+  <span class="js-link" id="feedback_link">Send us a message</span>
+</div>

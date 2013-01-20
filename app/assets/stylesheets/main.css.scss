@@ -1,0 +1,47 @@
+a {
+  text-decoration: underline;
+}
+
+.signup-methods {
+  display: none;
+}
+
+.loading {
+  display: none;
+  height: 45px;
+}
+
+label {
+  width: 210px;
+}
+
+.js-link {
+  border-bottom: 1px dashed #08C;
+  color: #08C;
+  cursor: pointer;
+}
+
+.red-link {
+  border-color: #ff0000;
+  color: #ff0000; 
+}
+
+.clear {
+  clear: both;
+}
+
+.separator {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform:uppercase;
+}
+
+.right {
+  float: right;
+  margin-right: 100px;
+}
+
+#feedback_form {
+  position: absolute;
+  display: none;
+}

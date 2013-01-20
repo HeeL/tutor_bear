@@ -1,0 +1,14 @@
+<%person = user.send(@search.who)%>
+<div class="person">
+  <b><%= user.name %></b><br />
+  Price:  <%= prices(person) %> <br />
+  Technologies: <%= langs(person) %> <br />
+  <span style="display: none" class="loading">Loading...</span>
+  <span class="js-link red-link contact-send" data-send-to="<%= user.id %>" data-receive-as="<%= @search.who %>">
+    Share Your E-mail
+  </span>
+  <% contacts_count = contacts_count(user, @search.who)%>
+  <%if contacts_count > 0%>
+    (You shared your contacts with this <%=@search.who%> <%=pluralize(contacts_count, 'time')%>)
+  <%end%>
+</div>

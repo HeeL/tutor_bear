@@ -1,0 +1,33 @@
+<div id="profile">
+
+  <%= form_for(current_user, url: update_profile_path, remote: true, html: {id: 'edit_form'}) do |f|%>
+
+  <%= f.label :name %> 
+  <%= f.text_field :name %> <br />
+  <div class="clear"></div>
+
+  <div class="actions">
+    <div>
+      I want to:
+    </div>
+    <label class="checkbox">
+      <%= f.check_box :teach %>Teach
+    </label>
+
+    <label class="checkbox">
+      <%= f.check_box :learn %>Learn
+    </label>
+  </div>
+  <div class="clear"></div>
+  
+  <%= render partial: 'teacher_info', locals: {f: f} %>
+  <%= render partial: 'learner_info', locals: {f: f} %>
+  
+  <div class="clear"></div>
+
+  <div class="submit">
+    <%= submit_tag 'Save Changes', class: 'btn-large btn-primary' %>
+    <%= image_tag 'ajax-loader.gif', class: 'loading' %>
+  </div>
+<% end %>
+</div>

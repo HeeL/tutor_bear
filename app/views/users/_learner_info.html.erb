@@ -1,0 +1,10 @@
+<div id="learner_info">
+  <h3>Learner</h3>
+  <%= f.fields_for :learner do |learner| %>
+    <%= learner.label :min_price, 'Price Range ($ per hour)' %>
+    <%= learner.text_field :min_price, class: 'span1', maxlength: 2 %> &nbsp; &ndash; &nbsp;  
+    <%= learner.text_field :max_price, class: 'span1', maxlength: 2 %> <br />
+    <%= label_tag :learner_langs, 'Languages:' %>
+    <%= text_field_tag :learner_langs, @langs[:learner], class: 'span3' %> <br />
+  <% end %>
+</div>

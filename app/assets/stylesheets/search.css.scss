@@ -1,0 +1,44 @@
+#show_more {
+  display: none;
+}
+.person {
+  margin-bottom: 20px
+}
+#search_form_block {
+  margin-top: 20px;
+  .checkbox {
+    display: inline-block;
+  }
+  .radio-btn {
+    margin: 5px 0 15px 0;
+    #who_learner {
+      margin-left: 20px;
+    }
+  }
+  .search-fields {
+    margin-bottom: 30px;
+  }
+  ul.ui-autocomplete {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: solid 1px #999;
+    cursor: default;
+    li {
+      background-color: #FFF;
+      border-top: solid 1px #DDD;
+      margin: 0;
+      padding: 0;
+      a {
+        color: #000;
+        display: block;
+        padding: 3px;
+        text-decoration: none;
+      }
+      a.ui-state-hover, a.ui-state-active {
+        background-color: #FFFCB2;
+      }
+    }
+  }
+}

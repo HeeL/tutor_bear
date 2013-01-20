@@ -1,0 +1,42 @@
+#profile {
+  .actions {
+    margin-top: 15px;
+    div {
+      float: left;
+    }
+    label {
+      float: left;
+      margin-left: 22px;
+      width: 50px;
+    }
+  }
+  #teacher_info, #learner_info {
+    display: none;
+    float: left;
+    width: 280px;
+  }
+  .submit {
+    margin: 25px 0 0 10px;
+  }
+  .left {
+    float: left; 
+  }
+  #learn, #teach {
+    margin-left: 5px;
+  }
+}
+
+h3.balance_history {
+  margin-top: 65px;
+}
+table.balance_history {
+  width: 250px;
+  border: 1px solid #C9C299;
+}
+tr.odd {
+  background-color: #C9C299;
+}
+td {
+  padding: 15px;
+  border: 0;
+}

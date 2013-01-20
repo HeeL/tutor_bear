@@ -1,0 +1,23 @@
+<div id="search_form_block">
+  <h3>Search</h3>
+
+  <%= form_tag(search_path, remote: true, id: 'search_form') do %>
+    <div class="search-fields">
+      <%= label_tag :langs, 'Languages' %>
+      <%= text_field_tag :langs %> <br />
+      <div class="radio-btn">
+        <%= radio_button_tag :who, 'teacher', true %> Teachers <%= radio_button_tag :who, 'learner' %> Learners
+      </div>
+      <%= label_tag :price, 'Price ($ per hour):' %>
+      <%= text_field_tag :price, nil, class: 'span1', maxlength: 2 %><br />
+      <label class="checkbox">
+        <%= check_box_tag :no_price_set, 1, true %>Include without price
+      </label>
+    </div>
+
+    <%= hidden_field_tag :offset, 0 %>
+    <%= hidden_field_tag :result_count, 0 %>
+    <%= submit_tag 'Show Teachers ()', class: 'btn-large btn-primary submit', id: 'submit_search' %>
+    <%= image_tag 'ajax-loader.gif', class: 'loading' %>
+  <% end %>
+</div>
