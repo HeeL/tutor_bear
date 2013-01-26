@@ -10,6 +10,11 @@ describe User do
       user.teacher.should be_kind_of(Teacher)
     end
 
+    it "case insensitive to email" do
+      user = FactoryGirl.create(:user, email: 'TeSt@gMaIL.com')
+      user.email.should eq('test@gmail.com')
+    end
+
   end
 
   context 'facebook' do

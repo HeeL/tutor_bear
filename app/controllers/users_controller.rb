@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.where(email: params[:email]).first
+    user = User.where(email: params[:email].to_s.downcase).first
     if !user
       result = set_error("We don't have a user with such email")
     elsif !user.valid_password?(params[:password])

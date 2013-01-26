@@ -67,6 +67,7 @@ class User < ActiveRecord::Base
   def create_teacher_learner
     self.teacher = Teacher.create unless self.teacher
     self.learner = Learner.create unless self.learner
+    self.email.downcase!
   end
   
 end

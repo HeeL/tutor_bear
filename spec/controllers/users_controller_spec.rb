@@ -73,6 +73,11 @@ describe UsersController do
       @test_user = FactoryGirl.create(:user)
     end
 
+    it "is not case sensitive for email" do
+      get :login, email: @test_user.email.upcase, password: @test_user.password
+      subject.current_user.should == @test_user
+    end
+
     it "signs in a user" do
       get :login, email: @test_user.email, password: @test_user.password
       subject.current_user.should == @test_user
