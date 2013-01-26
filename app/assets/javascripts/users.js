@@ -15,6 +15,7 @@ $(document).ready(function(){
   
   $('#teacher_langs, #learner_langs').tagit({
     allowSpaces: true,
+    caseSensitive: false,
     autocomplete: {
       source: function( request, response ) {
         $.get('/languages/match_names', {name: request.term}, function(data){
