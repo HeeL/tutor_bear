@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>TutorBear - Learn and Teach</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
   <link rel="SHORTCUT ICON" href="/assets/favicon.ico" />
   <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css", media: "all" %>
   <%= stylesheet_link_tag    "application", media: "all" %>
@@ -13,14 +17,40 @@
   <%= js_msg([notice, alert])%>
   <%= js_msg([flash[:error]], 'error')%>
 
-  <div class="container-fluid">
-    <%= yield %>
-  </div>
-
+<div class="container teach">
+  
+  <header>
+    <div class="wrap">
+      <a href="/">
+      <h1 class="logo">TutorBear</h1>
+      </a>
+      <div class="share pull-right">
+        <%= render partial: 'shared/soc_btns' %>
+      </div>
+    </div>
+    <div class="top-bar">
+      <div class="wrap">
+        You need to <a href="#" class="btn">Create an account</a> or <a href="#" class="btn" id="login" data-toggle="button">Sign in</a> to be able to Teach / Learn
+      </div>
+    </div>
+  </header>
+  
+  <%= yield %>
+  
+  <div class="clearfix"></div>
   <% if on_root_page? %>
     <%= render partial: 'shared/feedback_form' %>
-    <%= render partial: 'shared/soc_btns' %>
   <% end %>
-  
+
+  <footer>
+    <div class="wrap">
+      <div class="pull-left">&copy; <%=Date.today.year%> TutorBear.net</div>
+      <ul class="links pull-right">
+        <li><span class="js-link gray-link" id="feedback_link">Send E-mail</span></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>  
 </body>
 </html>

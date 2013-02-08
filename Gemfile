@@ -10,12 +10,13 @@ gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-gem 'anjlab-bootstrap-rails', '>= 2.2', require: 'bootstrap-rails'
-
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 
 group :assets do
+  gem "therubyracer"
+  gem "less-rails"
+  gem 'twitter-bootstrap-rails'
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -30,5 +31,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'rspec-rails'
 end

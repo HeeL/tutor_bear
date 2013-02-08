@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery.pnotify.min.js
 //= require_tree .
+//= require twitter/bootstrap

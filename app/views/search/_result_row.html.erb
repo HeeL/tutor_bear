@@ -1,9 +1,10 @@
 <%person = user.send(@search.who)%>
-<div class="person">
-  <b><%= user.name %></b><br />
-  Price:  <%= prices(person) %> <br />
-  Technologies: <%= langs(person) %> <br />
-  <span style="display: none" class="loading">Loading...</span>
+<div class="item">
+  <div class="contact pull-left"></div>
+  <div class="title"><span>Name:</span> <%= user.name %></div>
+  <div class="price"><span>Price ($):</span> <%= prices(person) %></div>
+  <div class="tech"><span>Languages:</span> <%= langs(person) %></div>
+  <%= image_tag 'ajax-loader.gif', class: 'loading' %>
   <span class="js-link red-link contact-send" data-send-to="<%= user.id %>" data-receive-as="<%= @search.who %>">
     Share Your E-mail
   </span>
