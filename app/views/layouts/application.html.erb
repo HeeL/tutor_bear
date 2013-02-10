@@ -30,7 +30,14 @@
     </div>
     <div class="top-bar">
       <div class="wrap">
-        You need to <a href="#" class="btn">Create an account</a> or <a href="#" class="btn" id="login" data-toggle="button">Sign in</a> to be able to Teach / Learn
+        <% if user_signed_in? %>
+          <%= link_to current_user.name, edit_profile_path %> | 
+          <%= link_to "Sign out", logout_path %>
+        <% else %>
+          You need to <span class="btn" id="sign_up_link">Create an account</span> or <span class="btn" id="sign_in_link">Sign in</span> to be able to Teach / Learn
+          <%= render partial: 'shared/sign_up_in', locals: {action: 'sign_up', path: register_path, label: 'Register'} %>
+          <%= render partial: 'shared/sign_up_in', locals: {action: 'sign_in', path: login_path, label: 'Login'} %>
+        <% end %>
       </div>
     </div>
   </header>

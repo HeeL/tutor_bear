@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
   });
   
-  $('#sign_up_form, #sign_in_form').bind('ajax:success', function(data, response, xhr) {
+  $('#sign_up_form, #sign_in_form').live('ajax:success', function(data, response, xhr) {
     if (response.status == 'success') {
       window.location.href = '/profile/edit'
     }

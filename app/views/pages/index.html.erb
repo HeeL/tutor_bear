@@ -1,14 +1,4 @@
-<% if user_signed_in? %>
-    <%= link_to current_user.name, edit_profile_path %> | 
-  <%= link_to "Sign out", logout_path %>
-<% else %>
-  You need to <span id="sign_up_link" class="js-link">create an account</span> <b>or</b> <span id="sign_in_link" class="js-link">sign in</span> to be able to Teach / Learn<br />
-  <%= render partial: 'shared/sign_up_in', locals: {action: 'sign_up', path: register_path, label: 'Register'} %>
-  <%= render partial: 'shared/sign_up_in', locals: {action: 'sign_in', path: login_path, label: 'Login'} %>
-<% end %>
-
 <%= render 'shared/search_form' %>
-
 
 <div class="results">
   <div class="wrap">

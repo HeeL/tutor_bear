@@ -6,10 +6,10 @@ function show_message(text, title, type){
 }
 
 function track_remote_messages(el){
-  el.bind('ajax:error', function(data, status, xhr) {
+  el.live('ajax:error', function(data, status, xhr) {
     show_message('Status: ' + status.status + '\n' + status.statusText, 'Error', 'error');
   });
-  el.bind('ajax:success', function(data, response, xhr) {
+  el.live('ajax:success', function(data, response, xhr) {
     if (response.status == 'error') {
       show_message(response.text, 'Error', 'error');
     }
@@ -25,28 +25,33 @@ function show_hide(el, show) {
 
 $(document).ready(function(){
 
-  $('#login').popover({
+  $('#sign_in_link').popover({
     html: true,
     placement: 'bottom',
-    title: 'You can sign in with your <a href="http://pplex.net/users/auth/facebook">Facebook</a> or <a href="http://pplex.net/users/auth/google_oauth2">Google</a> accounts <br><br> <input type="text" style="width:195px;"> <input style="width:195px;" type="password"><button class="btn btn-inverse" type="button" style="margin-bottom:-10px;">Sign in</button>'
+    title: $('#sign_in_block').html()
   });
 
+  $('#sign_up_link').popover({
+    html: true,
+    placement: 'bottom',
+    title: $('#sign_up_block').html()
+  });
 
-  $('form[data-remote=true]').bind('ajax:send', function(){
+  $('#sign_in_link').bind('click', function() {
+    $('#sign_up_link').popover('hide');
+  });
+
+  $('#sign_up_link').bind('click', function() {
+    $('#sign_in_link').popover('hide');
+  });
+
+  $('form[data-remote=true]').live('ajax:send', function(){
     $(this).find('.loading').show('slow');
     $(this).find('input[type="submit"]').attr('disabled', true)
   });
-  $('form[data-remote=true]').bind('ajax:complete', function(){
+  $('form[data-remote=true]').live('ajax:complete', function(){
     $(this).find('.loading').hide();
     $(this).find('input[type="submit"]').attr('disabled', false)
   });
 
-  $('#sign_up_link').bind('click', function(){
-    $('#sign_in_block').hide();
-    $('#sign_up_block').toggle('inline');
-  });
-  $('#sign_in_link').bind('click', function(){
-    $('#sign_up_block').hide();
-    $('#sign_in_block').toggle('inline');
-  });
 });

@@ -11,10 +11,6 @@ a {
   height: 45px;
 }
 
-label {
-  width: 210px;
-}
-
 .js-link {
   border-bottom: 1px dashed #08C;
   color: #08C;
@@ -36,6 +32,7 @@ label {
 }
 
 .separator {
+  margin: 5px 0;
   font-size: 14px;
   font-weight: bold;
   text-transform:uppercase;
@@ -51,6 +48,11 @@ label {
   display: none;
 }
 
+#sign_in_form, #sign_up_form {
+  .text-input {
+    width: 180px;
+  }
+}
 
 .container {
   width:100%;
