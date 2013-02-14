@@ -17,7 +17,7 @@
   <%= js_msg([notice, alert])%>
   <%= js_msg([flash[:error]], 'error')%>
 
-<div class="container teach">
+<div class="container teach" id="who_styles">
   
   <header>
     <div class="wrap">
@@ -31,24 +31,21 @@
     <div class="top-bar">
       <div class="wrap">
         <% if user_signed_in? %>
-          <%= link_to current_user.name, edit_profile_path %> | 
-          <%= link_to "Sign out", logout_path %>
+          <%= render 'shared/user_navi' %>
         <% else %>
-          You need to <span class="btn" id="sign_up_link">Create an account</span> or <span class="btn" id="sign_in_link">Sign in</span> to be able to Teach / Learn
-          <%= render partial: 'shared/sign_up_in', locals: {action: 'sign_up', path: register_path, label: 'Register'} %>
-          <%= render partial: 'shared/sign_up_in', locals: {action: 'sign_in', path: login_path, label: 'Login'} %>
+          <%= render 'shared/guest_navi' %>
         <% end %>
       </div>
     </div>
   </header>
   
-  <%= yield %>
-  
-  <div class="clearfix"></div>
-  <% if on_root_page? %>
-    <%= render partial: 'shared/feedback_form' %>
-  <% end %>
+  <div class="wrap">
+    <%= yield %>
+  </div>
 
+  <div class="clearfix"></div>
+  <%= render partial: 'shared/feedback_form' %>
+  
   <footer>
     <div class="wrap">
       <div class="pull-left">&copy; <%=Date.today.year%> TutorBear.net</div>

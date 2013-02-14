@@ -3,6 +3,10 @@
 }
 #search_form_block {
   margin-top: 20px;
+  ul.tagit {
+    width: 320px;
+    max-height: 75px;
+  }
   .checkbox {
     display: inline-block;
     margin: 5px 0 0 10px;

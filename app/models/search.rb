@@ -40,7 +40,7 @@ class Search
   def add_price_condition
     if @options[:price].present?
       no_price_cond = @options[:no_price_set] ? 'OR min_price + max_price = 0' : 'AND min_price + max_price > 0'
-      @users = @users.where("min_price <= ? #{no_price_cond}", @options[:price])
+      @users = @users.where("min_price <= ? #{no_price_cond}", @options[:price].to_i)
     elsif !@options[:no_price_set]
       @users = @users.where("min_price + max_price > 0")
     end

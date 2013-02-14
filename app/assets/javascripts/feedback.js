@@ -17,4 +17,10 @@ $(document).ready(function(){
     }
   });
 
+  $('body').bind('keydown', function(e){
+    if (e.keyCode == 27) {
+      $('#feedback_form').hide('slide');
+    }
+  });
+
 });
