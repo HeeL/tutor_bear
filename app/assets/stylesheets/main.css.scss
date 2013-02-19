@@ -108,6 +108,11 @@ header .share{
 
 
 /* ======= LAYOUT START */
+
+.gray-send {
+  background-color: #ccc !important;
+}
+
 .teach .main .search {
   background-color:#eee693;
 }
@@ -256,8 +261,12 @@ header .share{
        border-radius:10px;
 }
 
-.results .item:nth-child(2n) {
+.results .item .right {
   margin-right:100px;
+}
+
+.results .item .loading {
+  position: absolute;
 }
 
 .results .item .contact{
@@ -266,6 +275,7 @@ header .share{
   background-image:url(/assets/email.png);
   background-repeat:no-repeat;
   background-position:50% 8px;
+  cursor: pointer;
 }
 
 .results .item .title,
@@ -312,6 +322,7 @@ header .share{
 
 .results .more,
 .results .more:active{
+  cursor: pointer;
   color:#1a1617;
   text-decoration:none;
   font-weight:700;

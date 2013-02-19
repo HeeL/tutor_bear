@@ -39,6 +39,13 @@ describe SearchHelper do
       @person.languages = []
       langs(@person).should == '&ndash;'
     end
+
+    it "shows only first 50 characters of the langs list" do
+      @person.languages = [FactoryGirl.create(:language, name: 't' * 60)]
+      langs(@person).length.should == 50
+      langs(@person).slice(-3, 3) == '...'
+    end
+
   end
 
 end

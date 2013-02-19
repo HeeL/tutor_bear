@@ -9,7 +9,7 @@ module SearchHelper
   end
 
   def langs(person)
-    person.languages.empty? ? '&ndash;'.html_safe : person.languages.map(&:name).join(', ')
+    person.languages.empty? ? '&ndash;'.html_safe : truncate(person.languages.map(&:name).join(', '), length: 50)
   end
 
   def contacts_count(user, who)

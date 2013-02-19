@@ -78,8 +78,9 @@ $(document).ready(function(){
     else {
       update_result_count();
     }
-    if ($('#result_count').val() > $('.person').length && response != '') {
-      $('#offset').val($('.person').length)
+    results_on_page = $('.contact').length;
+    if ($('#result_count').val() > results_on_page && response != '') {
+      $('#offset').val(results_on_page)
       $('#show_more').show();
     }
     else {

@@ -12,7 +12,7 @@ $(document).ready(function(){
       }
       else {
         show_message(data.text, 'Success');
-        link.hide();
+        link.addClass('gray-send');
       }
     }).error(function(data) { 
       show_message('Status: ' + data.status + '\n' + data.statusText, 'Error', 'error'); 
