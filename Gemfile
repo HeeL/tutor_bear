@@ -12,11 +12,11 @@ gem 'omniauth-google-oauth2'
 
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
+gem "less-rails"
 gem 'twitter-bootstrap-rails'
 
 group :assets do
   gem "therubyracer"
-  gem "less-rails"
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
