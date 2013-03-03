@@ -1,4 +1,3 @@
-ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -9,6 +8,8 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
+
+ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
 
 module TutorBear
   class Application < Rails::Application
