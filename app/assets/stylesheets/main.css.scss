@@ -77,31 +77,31 @@ a {
 
 /* ======= HEADER START */
 header {
-  background-color:#3c3a3b;
-  box-shadow:0px 5px 5px rgba(0,0,0,0.34);
-  margin-bottom:10px;
-}
-
-header .logo{
-  width:500px;
-  height:85px;
-  line-height:85px;
-  font-size:40px;
-  color:#fff;
-  font-style:italic;
-  margin:0;
-  display:inline-block;
-}
-
-header .top-bar{
-  background-color:#dddcdc;
-  height:90px;
-  line-height:90px;
-  font-size:14px;
-}
-
-header .share{
-  margin-top:37px;
+  background-color: #3c3a3b;
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.34);
+  margin-bottom: 10px;
+  
+  .share {
+    margin-top: 37px;
+  }
+  .logo{
+    line-height:65px;
+    font-size:40px;
+    color:#fff;
+    font-style:italic;
+    margin:0;
+    display:inline-block;
+  }
+  .top-bar{
+    background-color:#dddcdc;
+    height:90px;
+    line-height:90px;
+    font-size:14px;
+  }
+  .slogan {
+    color: #ccc;
+    padding-bottom: 10px;
+  }
 }
 
 /* ======= HEADER END */

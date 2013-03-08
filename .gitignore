@@ -19,3 +19,4 @@ db/schema.rb
 Procfile
 .env
 config/environments/development.rb
+config/application.yml

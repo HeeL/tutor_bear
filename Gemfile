@@ -35,3 +35,6 @@ group :test, :development do
   gem 'binding_of_caller'
   gem 'rspec-rails'
 end
+
+gem 'unicorn'
+gem 'capistrano'
