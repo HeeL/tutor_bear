@@ -13,6 +13,10 @@ $(document).ready(function(){
   });
   $('#user_teach, #user_learn').change();
   
+  $('#edit_form').bind('submit', function(){
+    $('.tagit-new input').blur();
+  });
+
   $('#teacher_langs, #learner_langs').tagit({
     allowSpaces: true,
     caseSensitive: false,
