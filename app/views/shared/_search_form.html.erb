@@ -14,7 +14,7 @@
         <%= label_tag :price, 'Price ($ per hour):' %>
         <%= text_field_tag :price, nil, class: 'price-input', maxlength: 2 %>
         <label class="checkbox">
-          <%= check_box_tag :no_price_set, 1, true %>Include without price
+          <%= check_box_tag :no_price_set, 1, true %>List those who don't specify price
         </label>
         <%= hidden_field_tag :offset, 0 %>
         <%= hidden_field_tag :result_count, 0 %>
