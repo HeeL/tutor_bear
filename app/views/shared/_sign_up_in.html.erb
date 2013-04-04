@@ -1,6 +1,6 @@
 <div class="signup-methods" id="<%= action %>_block">
-  You can sign in with your <%= link_to 'Facebook', user_omniauth_authorize_path(:facebook) %> or 
-  <%= link_to 'Google', user_omniauth_authorize_path(:google_oauth2) %> accounts
+  <%=text%> <%= link_to 'Facebook', user_omniauth_authorize_path(:facebook) %> or 
+  <%= link_to 'Google', user_omniauth_authorize_path(:google_oauth2) %>
   <div class="separator">or</div>
   <%= form_tag(path, remote: true, id: "#{action}_form") do %>
     <%=label_tag :email%>

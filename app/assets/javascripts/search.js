@@ -27,12 +27,14 @@ $(document).ready(function(){
     if($('input[name="who"]:checked').val() == 'teacher') {
       new_label = current_label.replace('Learners', 'Teachers');
       $('#who_header').html('Teachers');
+      $('#who_no_price').html('teachers');
       $('#who_styles').removeClass('learn');
       $('#who_styles').addClass('teach');
     }
     else {
       new_label = current_label.replace('Teachers', 'Learners');
       $('#who_header').html('Learners');
+      $('#who_no_price').html('learners');
       $('#who_styles').removeClass('teach');
       $('#who_styles').addClass('learn');
     }
