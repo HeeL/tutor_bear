@@ -4,6 +4,6 @@
   <div class="contact pull-left contact-send <%='gray-send' if contacts_count > 0 %>" data-send-to="<%= user.id %>" data-receive-as="<%= @search.who %>"></div>
   <%= image_tag 'ajax-loader.gif', class: 'loading'%>
   <div class="title"><span>Name:</span> <%= user.name %></div>
-  <div class="price"><span>Price ($):</span> <%= prices(person) %></div>
+  <div class="price"><span>Price:</span> <%= prices(person) %></div>
   <div class="tech"><span>Languages:</span> <%= langs(person) %></div>
 </div>

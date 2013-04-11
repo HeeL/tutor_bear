@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   devise :database_authenticatable, :validatable, :omniauthable, :rememberable, :trackable
 
-  attr_accessible :email, :password, :name, :teach, :learn,
+  attr_accessible :email, :password, :name, :teach, :learn, :active,
                   :learner, :teacher, :teacher_attributes, :learner_attributes
 
   has_one :teacher, dependent: :destroy

@@ -4,9 +4,8 @@ ActiveAdmin.register User do
   index do
     column :name
     column :email
+    column :active
     column :created_at
-    column :min_price
-    column :max_price
     
     default_actions
   end
@@ -15,8 +14,6 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :name
       f.input :email
-      f.input :min_price
-      f.input :max_price
       f.input :active
     end
 
