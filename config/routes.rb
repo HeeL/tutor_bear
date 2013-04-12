@@ -20,6 +20,8 @@ TutorBear::Application.routes.draw do
     post '/send_contacts' => 'contacts#send_contacts', as: :send_contacts
   end
 
+  get 'profile/(:id)' => 'users#show', as: :show_profile
+
   match 'process_payment' => 'balance#process_payment'
 
   match '/search' => 'search#index', as: :search

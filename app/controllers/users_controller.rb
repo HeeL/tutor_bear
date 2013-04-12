@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   before_filter :get_langs, only: :edit
   before_filter :set_langs, only: :update
   before_filter :check_reg_count, only: :register
+
+  def show
+    @user = User.find(params[:id])
+  end
   
   def update
     if !current_user.update_attributes(params[:user])

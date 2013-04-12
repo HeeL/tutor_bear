@@ -3,13 +3,34 @@ require 'spec_helper'
 describe UsersController do
 
   before :each do
-    @user = FactoryGirl.create(:user, name: 'Test', uid: '123')
+    @user = FactoryGirl.create(:user, name: 'Test', uid: '123', show_email: false)
     @learn_langs = ['Ruby', 'PHP']
     @teach_langs = ['Python', 'C++']
     @user.learner.update_attributes(min_price: 1, max_price: 3, languages: create_langs(@learn_langs))
     @user.teacher.update_attributes(min_price: 5, max_price: 7, languages: create_langs(@teach_langs))
     @user.reload
     sign_in @user
+  end
+
+  describe '#show' do
+    render_views
+
+    it "shows email only for registered users" do
+      @user.update_attributes(show_email: true)
+      get :show, id: @user.id
+      response.body.should have_xpath("//a[@href='mailto:#{@user.email}']")
+    end
+
+    it "doesn't show email to guests" do
+      sign_out @user
+      get :show, id: @user.id
+      response.body.should_not have_xpath("//a[@href='mailto:#{@user.email}']")
+    end
+
+    it "doesn't show email if user doesn't allow that" do
+      get :show, id: @user.id
+      response.body.should_not have_xpath("//a[@href='mailto:#{@user.email}']")
+    end
   end
 
   describe '#edit' do
@@ -19,6 +40,7 @@ describe UsersController do
       get :edit
       view = response.body
       view.should have_xpath("//input[@name='user[name]' and @value='#{@user.name}']")
+      view.should have_xpath("//input[@type='checkbox' and @name='user[show_email]']")
       
       view.should have_xpath("//input[@name='user[teacher_attributes][min_price]' and @value='#{@user.teacher.min_price}']")
       view.should have_xpath("//input[@name='user[teacher_attributes][max_price]' and @value='#{@user.teacher.max_price}']")

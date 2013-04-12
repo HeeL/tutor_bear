@@ -13,14 +13,22 @@ $(document).ready(function(){
   $('#feedback_form').bind('ajax:success', function(data, response, xhr) {
     if (response.status == 'success') {
       $('#feedback_form #text').val('');
-      $(this).hide('slide');
+      hide_feedback_form();
     }
   });
 
+  $('#feedback_form img.close-btn').on('click', function(){
+    hide_feedback_form();
+  })
+
   $('body').bind('keydown', function(e){
     if (e.keyCode == 27) {
-      $('#feedback_form').hide('slide');
+      hide_feedback_form();
     }
   });
+
+  function hide_feedback_form(){
+    $('#feedback_form').hide('slide');
+  }
 
 });

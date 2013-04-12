@@ -47,7 +47,12 @@ a {
   position: absolute;
   display: none;
   background-color: #CCC;
+  border-radius: 15px;
   padding: 20px;
+  .close-btn {
+    cursor: pointer;
+    float: right;
+  }
 }
 
 #sign_in_form, #sign_up_form {

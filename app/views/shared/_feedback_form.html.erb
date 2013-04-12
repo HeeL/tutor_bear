@@ -1,6 +1,7 @@
 <div class="right">
   <div style="background-color: #000">
   <%=form_tag(send_feedback_path, remote: true, id: 'feedback_form') do%>
+    <%=image_tag 'close.png', class: 'close-btn'%>
     <%= label_tag :from, 'Your E-mail' %>
     <%= text_field_tag :from, current_user.try(:email), class: 'span4', disabled: !current_user.nil? %>
     <%= label_tag :text %>
