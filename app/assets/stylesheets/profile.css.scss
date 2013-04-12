@@ -26,6 +26,23 @@
   }
 }
 
+#profile_show {
+  h2 {
+    margin-top: 30px;
+  }
+  #actions {
+    margin-top: 30px;
+    .action {
+      float: left;
+      width: 300px;
+      margin-left: 10px;
+      h2 {
+        margin-bottom: 7px;
+      }
+    }
+  }
+}
+
 h3.balance_history {
   margin-top: 65px;
 }

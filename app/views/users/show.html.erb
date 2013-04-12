@@ -1,0 +1,23 @@
+<div id="profile_show">
+  <h2><%= @user.name %></h2><%=mail_to(@user.email ) if @user.show_email? && current_user%>
+
+  <div id="actions">
+    <%if @user.teach?%>
+      <div class="action">
+        <h3>Teach:</h3>
+        Price: <%= prices(@user.teacher) %><br />
+        Technologies: <%= langs(@user.teacher) %><br />
+        <%= image_tag 'ajax-loader.gif', class: 'loading'%><span class="js-link contact-send" data-send-to="<%= @user.id %>" data-receive-as="teacher">Send request with your E-mail</span>
+      </div>
+    <%end%>
+
+    <%if @user.learn?%>
+      <div class="action">
+        <h3>Learn:</h3>
+        Price: <%= prices(@user.learner) %><br />
+        Technologies: <%= langs(@user.learner) %><br />
+        <%= image_tag 'ajax-loader.gif', class: 'loading'%><span class="js-link contact-send" data-send-to="<%= @user.id %>" data-receive-as="learner">Send request with your E-mail</span>
+      </div>
+    <%end%>
+  </div>
+</div>
