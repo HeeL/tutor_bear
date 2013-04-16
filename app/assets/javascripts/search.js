@@ -5,7 +5,7 @@ $(document).ready(function(){
     caseSensitive: false,
     autocomplete: {
       source: function( request, response ) {
-        $.get('/languages/match_names', {name: request.term}, function(data){
+        $.get('/' + current_lang + '/languages/match_names', {name: request.term}, function(data){
           response(data);
         });
       },
@@ -13,7 +13,7 @@ $(document).ready(function(){
     },
     afterTagAdded: function(event, input) {
       lang = input.tag.find('span.tagit-label').text();
-      $.get('/languages/match_names', {name: lang, exact: 1}, function(data){
+      $.get('/' + current_lang + '/languages/match_names', {name: lang, exact: 1}, function(data){
         if(data.length == 0) {
           show_message("We don't have \"" + lang + "\" in our list", '', 'error');
           $(event.target).tagit('removeTagByLabel', lang);
@@ -64,7 +64,7 @@ $(document).ready(function(){
   });
 
   function update_result_count() {
-    $.post('/search/get_count', $('#search_form').serialize(), function(data) {
+    $.post('/' + current_lang + '/search/get_count', $('#search_form').serialize(), function(data) {
       label = $('#submit_search').val();
       $('#submit_search').val(label.replace(label.slice(label.indexOf(' (') + 2), data + ')'));
       $('#result_count').val(data);

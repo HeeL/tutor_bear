@@ -6,7 +6,7 @@ $(document).ready(function(){
     link = $(e.target);
     loading = link.parent().find('.loading');
     loading.show();
-    $.post('/send_contacts', {send_to: send_to, receive_as: receive_as}, function(data, e) {
+    $.post('/'+current_lang+'/send_contacts', {send_to: send_to, receive_as: receive_as}, function(data, e) {
       if (data.status == 'error') {
         show_message(data.text, 'Error', 'error');
       }

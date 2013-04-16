@@ -22,7 +22,7 @@ $(document).ready(function(){
     caseSensitive: false,
     autocomplete: {
       source: function( request, response ) {
-        $.get('/languages/match_names', {name: request.term}, function(data){
+        $.get('/' + current_lang + '/languages/match_names', {name: request.term}, function(data){
           response(data);
         });
       },
@@ -30,7 +30,7 @@ $(document).ready(function(){
     },
     afterTagAdded: function(event, input) {
       lang = input.tag.find('span.tagit-label').text();
-      $.get('/languages/match_names', {name: lang, exact: 1}, function(data){
+      $.get('/' + current_lang + '/languages/match_names', {name: lang, exact: 1}, function(data){
         if(data.length == 0) {
           show_message("We don't have \"" + lang + "\" in our list", '', 'error')
           $(event.target).tagit('removeTagByLabel', lang);
@@ -41,7 +41,7 @@ $(document).ready(function(){
   
   $('#sign_up_form, #sign_in_form').live('ajax:success', function(data, response, xhr) {
     if (response.status == 'success') {
-      window.location.href = '/profile/edit'
+      window.location.href = current_lang + '/profile/edit'
     }
   });
   

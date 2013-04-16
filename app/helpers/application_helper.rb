@@ -9,4 +9,8 @@ module ApplicationHelper
     request.fullpath == '/'
   end
 
+  def all_langs
+    TutorBear::Application::LANGS
+  end
+
 end

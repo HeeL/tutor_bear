@@ -97,6 +97,10 @@ GEM
     ffi (1.2.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    globalize3 (0.3.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
     has_scope (0.5.1)
     hashie (1.2.0)
     highline (1.6.15)
@@ -164,6 +168,9 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
+    paper_trail (2.7.1)
+      activerecord (~> 3.0)
+      railties (~> 3.0)
     pg (0.14.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -262,6 +269,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   factory_girl_rails
+  globalize3
   jquery-rails
   less-rails
   meta_search (>= 1.1.0.pre)

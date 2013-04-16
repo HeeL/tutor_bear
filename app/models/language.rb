@@ -6,6 +6,8 @@ class Language < ActiveRecord::Base
   has_and_belongs_to_many :learners
 
   validates :name, presence: true, uniqueness: true
+
+  translates :name
   
   def self.match_names(name, exact = false)
     name = "%#{name}%" unless exact

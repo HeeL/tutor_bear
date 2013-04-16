@@ -12,7 +12,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-lang="<%=I18n.locale%>">
   <%=render 'shared/ga'%>
   <%= js_msg([notice, alert])%>
   <%= js_msg([flash[:error]], 'error')%>
@@ -21,9 +21,7 @@
   
   <header>
     <div class="wrap">
-      <a href="/">
-        <h1 class="logo">TutorBear</h1>
-      </a>
+      <%=link_to '<h1 class="logo">TutorBear</h1>'.html_safe, root_path%>
       <div class="share pull-right">
         <%= render partial: 'shared/soc_btns' %>
       </div>
@@ -36,6 +34,11 @@
         <% else %>
           <%= render 'shared/guest_navi' %>
         <% end %>
+        <div class="flags">
+          <% all_langs.each do |lang| %>
+            <%= link_to(image_tag("#{lang}.png"), url_for(locale: lang)) %>
+          <% end %>
+        </div>
       </div>
     </div>
   </header>

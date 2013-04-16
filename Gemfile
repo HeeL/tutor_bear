@@ -10,6 +10,7 @@ gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+gem 'globalize3'
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 gem "less-rails"

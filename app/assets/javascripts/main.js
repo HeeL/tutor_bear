@@ -24,6 +24,7 @@ function show_hide(el, show) {
 }
 
 $(document).ready(function(){
+  current_lang = $('body').data('lang')
 
   $('#sign_in_link').popover({
     html: true,
