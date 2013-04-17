@@ -16,8 +16,8 @@ describe Language do
     end
 
     it "finds matching names" do
-      subject.match_names('Ru').should eql([@lang1.name, @lang2.name])
-      subject.match_names('Ruby').should eql([@lang1.name, @lang2.name])
+      subject.match_names('Ru').should eql([@lang2.name, @lang1.name])
+      subject.match_names('Ruby').should eql([@lang2.name, @lang1.name])
       subject.match_names('Ruby+').first.should eql(@lang2.name)
     end
 

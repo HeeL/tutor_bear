@@ -52,7 +52,7 @@ class Search
 
   def add_lang_condition
     if @options[:langs].present?
-      langs = Language.where(name: @options[:langs].split(',')).map(&:id)
+      langs = Language.with_translations.where('language_translations.name' => @options[:langs].split(',')).map(&:id)
       @users = @users.where("#{@who}s.id IN (
         SELECT #{@who}_id
         FROM languages_#{@who}s ll

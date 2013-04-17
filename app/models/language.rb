@@ -11,7 +11,7 @@ class Language < ActiveRecord::Base
   
   def self.match_names(name, exact = false)
     name = "%#{name}%" unless exact
-    self.where('name ILIKE ?', name).all.map(&:name)
+    self.with_translations(I18n.locale).where('language_translations.name ILIKE ?', name).all.map(&:name)
   end
   
 end

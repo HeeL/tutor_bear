@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
   def set_langs
     %w(learner teacher).each do |lt|
-      current_user.send(lt).languages = Language.where(name: params["#{lt}_langs".to_sym].to_s.split(','))
+      current_user.send(lt).languages = Language.with_translations.where('language_translations.name' => params["#{lt}_langs".to_sym].to_s.split(','))
     end
   end
 
