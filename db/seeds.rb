@@ -9,9 +9,15 @@ langs = {
     'Итальянский', 'Китайский', 'Португальский'] 
 }
 
-langs.each do |locale, langs|
-  I18n.locale = locale
-  Language.destroy_all
-  Language.create(langs.uniq.map{|lang| {name: lang}})
+def reset_autoincrement
+  ActiveRecord::Base.connection.exec_query("ALTER SEQUENCE languages_id_seq RESTART WITH 9;")
 end
 
+Language.destroy_all
+reset_autoincrement
+
+langs[:en].each do |locale, langs|
+  #Language.create(name: )
+  #I18n.locale = :ru
+  #update
+end

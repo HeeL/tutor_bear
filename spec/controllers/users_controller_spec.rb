@@ -17,18 +17,18 @@ describe UsersController do
 
     it "shows email only for registered users" do
       @user.update_attributes(show_email: true)
-      get :show, id: @user.id
+      get :show, id: @user.id, locale: 'en'
       response.body.should have_xpath("//a[@href='mailto:#{@user.email}']")
     end
 
     it "doesn't show email to guests" do
       sign_out @user
-      get :show, id: @user.id
+      get :show, id: @user.id, locale: 'en'
       response.body.should_not have_xpath("//a[@href='mailto:#{@user.email}']")
     end
 
     it "doesn't show email if user doesn't allow that" do
-      get :show, id: @user.id
+      get :show, id: @user.id, locale: 'en'
       response.body.should_not have_xpath("//a[@href='mailto:#{@user.email}']")
     end
   end
@@ -37,7 +37,7 @@ describe UsersController do
     render_views
 
     it "shows a filled form" do
-      get :edit
+      get :edit, locale: 'en'
       view = response.body
       view.should have_xpath("//input[@name='user[name]' and @value='#{@user.name}']")
       view.should have_xpath("//input[@type='checkbox' and @name='user[show_email]']")
@@ -54,7 +54,7 @@ describe UsersController do
 
   describe '#update' do
     it "rejects bad params" do
-      put :update, uid: '12345'
+      put :update, uid: '12345', locale: 'en'
       @user.reload
       @user.uid.should == '123'
     end
@@ -63,27 +63,27 @@ describe UsersController do
   describe '#logout' do
     it "signs out a user" do
       subject.current_user.should_not be_nil
-      get :logout
+      get :logout, locale: 'en'
       subject.current_user.should be_nil
     end
   end
   
   describe '#register' do
     it "signs up a user" do
-      get :register, email: 'test@test.com', password: 's3cr3Tzz'
+      get :register, email: 'test@test.com', password: 's3cr3Tzz', locale: 'en'
       User.where(email: 'test@test.com').count.should == 1
     end
 
     it "limit registrations from 1 ip" do
       User.destroy_all
       25.times do |n|
-        get :register, email: "test#{n}@test.com", password: 's3cr3Tzz'
+        get :register, email: "test#{n}@test.com", password: 's3cr3Tzz', locale: 'en'
       end
       User.count.should == 20
       user = User.last
       user.created_at = Time.now - 30.hours
       user.save
-      get :register, email: "test25@test.com", password: 's3cr3Tzz'
+      get :register, email: "test25@test.com", password: 's3cr3Tzz', locale: 'en'
       User.count.should == 21
     end
 
@@ -96,19 +96,19 @@ describe UsersController do
     end
 
     it "is not case sensitive for email" do
-      get :login, email: @test_user.email.upcase, password: @test_user.password
+      get :login, email: @test_user.email.upcase, password: @test_user.password, locale: 'en'
       subject.current_user.should == @test_user
     end
 
     it "signs in a user" do
-      get :login, email: @test_user.email, password: @test_user.password
+      get :login, email: @test_user.email, password: @test_user.password, locale: 'en'
       subject.current_user.should == @test_user
     end
 
     it "checks password and email" do
-      get :login, email: @test_user.email, password: "nil_nil"
+      get :login, email: @test_user.email, password: "nil_nil", locale: 'en'
       subject.current_user.should be_nil
-      get :login, email: 'nil_nil@nil_nil.com', password: @test_user.password
+      get :login, email: 'nil_nil@nil_nil.com', password: @test_user.password, locale: 'en'
       subject.current_user.should be_nil
     end
     
