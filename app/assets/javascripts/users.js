@@ -32,7 +32,7 @@ $(document).ready(function(){
       lang = input.tag.find('span.tagit-label').text();
       $.get('/' + current_lang + '/languages/match_names', {name: lang, exact: 1}, function(data){
         if(data.length == 0) {
-          show_message("We don't have \"" + lang + "\" in our list", '', 'error')
+          show_message(I18n.t('no_lang', {lang: lang}), '', 'error')
           $(event.target).tagit('removeTagByLabel', lang);
         }
       });

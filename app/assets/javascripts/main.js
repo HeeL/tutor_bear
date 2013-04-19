@@ -7,14 +7,14 @@ function show_message(text, title, type){
 
 function track_remote_messages(el){
   el.live('ajax:error', function(data, status, xhr) {
-    show_message('Status: ' + status.status + '\n' + status.statusText, 'Error', 'error');
+    show_message(I18n.t('status') + ': ' + status.status + '\n' + status.statusText, I18n.t('error'), 'error');
   });
   el.live('ajax:success', function(data, response, xhr) {
     if (response.status == 'error') {
-      show_message(response.text, 'Error', 'error');
+      show_message(response.text, I18n.t('error'), 'error');
     }
     else {
-      show_message(response.text, 'Success');
+      show_message(response.text, 'Ok');
     }
   });
 }

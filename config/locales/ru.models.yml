@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        name: "Имя"
+        password: "Пароль"
+      language:
+        name: "Название"
+      learner:
+        min_price: 'Минимальная цена'
+        max_price: 'Максимальная цена'
+      teacher:
+        min_price: 'Минимальная цена'
+        max_price: 'Максимальная цена'
