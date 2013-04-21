@@ -8,6 +8,6 @@ class CreateLanguageTranslations < ActiveRecord::Migration
   end
 
   def down
-    Language.drop_translation_table!, migrate_data: true
+    Language.drop_translation_table! migrate_data: true
   end
 end
