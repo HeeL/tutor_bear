@@ -2,11 +2,11 @@
   <div style="background-color: #000">
   <%=form_tag(send_feedback_path, remote: true, id: 'feedback_form') do%>
     <%=image_tag 'close.png', class: 'close-btn'%>
-    <%= label_tag :from, 'Your E-mail' %>
+    <%= label_tag :from, I18n.t('your_email') %>
     <%= text_field_tag :from, current_user.try(:email), class: 'span4', disabled: !current_user.nil? %>
-    <%= label_tag :text %>
+    <%= label_tag :text, I18n.t('text') %>
     <%=text_area_tag :text, nil, rows: 5, cols: 20, class: 'span4'%><br />
-    <%= submit_tag 'Send', class: 'btn-large btn-primary' %>
+    <%= submit_tag I18n.t('send'), class: 'btn-large btn-primary' %>
     <%= image_tag 'ajax-loader.gif', class: 'loading' %>
   <% end %>
  </div>

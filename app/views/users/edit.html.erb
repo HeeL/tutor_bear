@@ -7,19 +7,19 @@
   <div class="clear"></div>
 
   <label class="checkbox">
-    <%= f.check_box :show_email %>Public your email (will be shown only for registered users)
+    <%= f.check_box :show_email %><%=I18n.t('profile.public_email')%>
   </label>
 
   <div class="actions">
     <div>
-      I want to:
+      <%=I18n.t('profile.want')%>:
     </div>
     <label class="checkbox">
-      <%= f.check_box :teach %>Teach
+      <%= f.check_box :teach %><%=I18n.t('profile.teach')%>
     </label>
 
     <label class="checkbox">
-      <%= f.check_box :learn %>Learn
+      <%= f.check_box :learn %><%=I18n.t('profile.learn')%>
     </label>
   </div>
   <div class="clear"></div>
@@ -30,7 +30,7 @@
   <div class="clear"></div>
 
   <div class="submit">
-    <%= submit_tag 'Save Changes', class: 'btn-large btn-primary' %>
+    <%= submit_tag I18n.t('profile.save'), class: 'btn-large btn-primary' %>
     <%= image_tag 'ajax-loader.gif', class: 'loading' %>
   </div>
 <% end %>

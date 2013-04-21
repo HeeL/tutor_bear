@@ -13,4 +13,9 @@ module ApplicationHelper
     TutorBear::Application::LANGS
   end
 
+  def page_title
+    trans_title = I18n.t("page_title.#{params[:controller]}.#{params[:action]}", default: I18n.t('page_title.default'))
+    "TutorBear: #{trans_title}"
+  end
+
 end

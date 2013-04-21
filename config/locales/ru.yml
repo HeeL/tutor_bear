@@ -1,2 +1,59 @@
-en:
-  hello: "Приветики"
+ru:
+  fail_log_in: "Попытка входа в систему завершилась неудачей"
+  auth_required: 'Необходима регистрация на сайте'
+  email_sent: 'Ваше сообщение было отправлено на'
+  signed_out: 'Вы успешно вышли'
+  user_not_found: "В нашей базе нет пользователя с таким Email"
+  incorrect_password: "Неверный пароль"
+  too_many_regs: 'Слишком много регистраций с вашего IP'
+  learner: 'ученик'
+  teacher: 'учитель'
+  learners: 'ученики'
+  teachers: 'учителя'
+  user: 'Пользователь'
+  send_email: 'Отпарвить письмо'
+  slogan: 'Обучайтесь иностранным языкам или становитесь учителем'
+  show_more: 'Еще'
+  name: 'Имя'
+  price: 'Цена'
+  languages: 'Языки'
+  your_email: 'Ваш E-mail'
+  text: 'Текст'
+  send: 'Отправить'
+  sign_out: "Выйти"
+  sign_in: "Войти"
+  sign_up: 'Создать аккаунт'
+  or: 'или'
+  need: 'Вам необходимо'
+  to_be_able: 'чтобы иметь возможность Обучать или Учиться'
+  password: 'Пароль'
+  sign_up_text: 'Вы можете зарегистрироваться с помощью'
+  sign_up_btn: 'Регистрация'
+  sign_in_text: 'Вы можете войти с помощью'
+  sign_in_btn: 'Войти'
+  search:
+    headline: 'Поиск'
+    include_no_price: "Включить %{person}, которые не указали цену"
+    show_teachers: 'Показать Учителей'
+    teachers_no_price: 'учителей'
+    teacher_title: 'Учителя'
+  page_title:
+    default: 'Обучай и Учись'
+    users:
+      edit: 'Редактирование профиля'
+  profile:
+    updated: 'Изменения сохранены'
+    price: 'Цена ($ в час)'
+    learner: 'Ученик'
+    teacher: 'Учитель'
+    want: 'Я хочу'
+    teach: 'Учить'
+    learn: 'Учиться'
+    save: 'Сохранить Изменения'
+    public_email: 'Показывать на странице (будет виден только пользователям)'
+    send_request: 'Отправить запрос с вашим E-mail'
+  contacts:
+    teacher: 'учителю'
+    learner: 'ученику'
+    sent: 'Мы отправили ваш email данному %{receiver}'
+    already_contacted: "Прошло менее недели с момента отправки запроса данному человеку"

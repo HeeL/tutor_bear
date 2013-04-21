@@ -15,7 +15,7 @@ $(document).ready(function(){
       lang = input.tag.find('span.tagit-label').text();
       $.get('/' + current_lang + '/languages/match_names', {name: lang, exact: 1}, function(data){
         if(data.length == 0) {
-          show_message("We don't have \"" + lang + "\" in our list", '', 'error');
+          show_message(I18n.t('no_lang', {lang: lang}), '', 'error');
           $(event.target).tagit('removeTagByLabel', lang);
         }
       });
@@ -25,16 +25,16 @@ $(document).ready(function(){
   $('#who_teacher, #who_learner').bind('change', function(){
     current_label = $('#submit_search').val();
     if($('input[name="who"]:checked').val() == 'teacher') {
-      new_label = current_label.replace('Learners', 'Teachers');
-      $('#who_header').html('Teachers');
-      $('#who_no_price').html('teachers');
+      new_label = current_label.replace(I18n.t('learners_show'), I18n.t('teachers_show'));
+      $('#who_header').html(I18n.t('teacher_title'));
+      $('#who_no_price').html(I18n.t('teachers_no_price'));
       $('#who_styles').removeClass('learn');
       $('#who_styles').addClass('teach');
     }
     else {
-      new_label = current_label.replace('Teachers', 'Learners');
-      $('#who_header').html('Learners');
-      $('#who_no_price').html('learners');
+      new_label = current_label.replace(I18n.t('teachers_show'), I18n.t('learners_show'));
+      $('#who_header').html(I18n.t('learner_title'));
+      $('#who_no_price').html(I18n.t('learners_no_price'));
       $('#who_styles').removeClass('teach');
       $('#who_styles').addClass('learn');
     }

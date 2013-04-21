@@ -1,2 +1,59 @@
 en:
-  hello: "Hello world"
+  fail_log_in: "We've failed to log you in"
+  auth_required: 'You have to sign in first'
+  email_sent: 'Your message was sent to'
+  signed_out: 'Signed out successfully'
+  user_not_found: "We don't have a user with such email"
+  incorrect_password: "The password is not correct"
+  too_many_regs: 'Too many registrations from your IP'
+  learner: 'learner'
+  teacher: 'teacher'
+  learners: 'learners'
+  teachers: 'teachers'
+  user: 'User'
+  send_email: 'Send Email'
+  slogan: 'Learn Foreign Languages or Become an Online Teacher'
+  show_more: 'Show More'
+  name: 'Name'
+  price: 'Price'
+  languages: 'Languages'
+  your_email: 'Your E-mail'
+  text: 'Text'
+  send: 'Send'
+  sign_out: "Sign out"
+  sign_in: "Sign in"
+  sign_up: 'Create an account'
+  or: 'or'
+  need: 'You need to'
+  to_be_able: 'to be able to Teach / Learn'
+  password: 'Password'
+  sign_up_text: 'You  can join easily by clicking through'
+  sign_up_btn: 'Register'
+  sign_in_text: 'You can sign in with your'
+  sign_in_btn: 'Login'
+  search:
+    headline: 'Search'
+    include_no_price: "Also show %{person} who don't give price"
+    show_teachers: 'Show Teachers'
+    teachers_no_price: 'teachers'
+    teacher_title: 'Teachers'
+  page_title:
+    default: 'Learn and Teach'
+    users:
+      edit: 'Profile Edit'
+  profile:
+    updated: 'Profile updated'
+    price: 'Price Range ($ per hour)'
+    learner: 'Learner'
+    teacher: 'Teacher'
+    want: 'I want to'
+    teach: 'Teach'
+    learn: 'Learn'
+    save: 'Save Changes'
+    public_email: 'Public your email (will be shown only for registered users)'
+    send_request: 'Send request with your E-mail'
+  contacts:
+    teacher: 'learner'
+    learner: 'teacher'
+    sent: "We've sent your email to the %{receiver}"
+    already_contacted: "That was less than a week ago when you last time shared your email with this person"

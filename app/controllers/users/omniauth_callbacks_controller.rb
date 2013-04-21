@@ -19,7 +19,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in @user, event: :authentication
       redirect_to edit_profile_path    
     else
-      flash[:error] = "We've failed to log you in"
+      flash[:error] = I18n.t('fail_log_in')
       redirect_to root_path
     end
   end

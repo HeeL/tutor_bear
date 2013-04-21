@@ -6,7 +6,7 @@ class FeedbacksController < ApplicationController
       text: params[:text]
     }
     FeedbackMailer.send_feedback(info).deliver
-    result = set_success("Your message was sent to #{ENV['INFO_EMAIL']}")
+    result = set_success("#{I18n.t('email_sent')} #{ENV['INFO_EMAIL']}")
 
     render json: result
   end

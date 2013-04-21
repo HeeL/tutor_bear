@@ -13,23 +13,23 @@ class UsersController < ApplicationController
     if !current_user.update_attributes(params[:user])
       result = set_error(current_user.errors.full_messages.first)
     else
-      result = set_success('Profile updated')
+      result = set_success(I18n.t('profile.updated'))
     end
     render json: result
   end
 
   def logout
     sign_out current_user
-    flash[:notice] = 'Signed out successfully'
+    flash[:notice] = I18n.t('signed_out')
     redirect_to root_path
   end
 
   def login
     user = User.where(email: params[:email].to_s.downcase).first
     if !user
-      result = set_error("We don't have a user with such email")
+      result = set_error(I18n.t('user_not_found'))
     elsif !user.valid_password?(params[:password])
-      result = set_error("The password is not correct")
+      result = set_error(I18n.t('incorrect_password'))
     else
       sign_in user
       result = set_success
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   def check_reg_count
     reg_count = User.where('created_at >= ? AND  last_sign_in_ip = ?', Time.now - 24.hours, request.remote_ip).count
     if reg_count >= 20
-      render json: set_error('Too many registrations from your IP')
+      render json: set_error(I18n.t('too_many_regs'))
       return false
     end
   end

@@ -4,19 +4,19 @@
   <div id="actions">
     <%if @user.teach?%>
       <div class="action">
-        <h3>Teach:</h3>
-        Price: <%= prices(@user.teacher) %><br />
-        Technologies: <%= langs(@user.teacher) %><br />
-        <%= image_tag 'ajax-loader.gif', class: 'loading'%><span class="js-link contact-send" data-send-to="<%= @user.id %>" data-receive-as="teacher">Send request with your E-mail</span>
+        <h3><%=I18n.t('profile.teacher')%>:</h3>
+        <%=I18n.t('price')%>: <%= prices(@user.teacher) %><br />
+        <%=I18n.t('languages')%>: <%= langs(@user.teacher) %><br />
+        <%= image_tag 'ajax-loader.gif', class: 'loading'%><span class="js-link contact-send" data-send-to="<%= @user.id %>" data-receive-as="teacher"><%=I18n.t('profile.send_request')%></span>
       </div>
     <%end%>
 
     <%if @user.learn?%>
       <div class="action">
-        <h3>Learn:</h3>
-        Price: <%= prices(@user.learner) %><br />
-        Technologies: <%= langs(@user.learner) %><br />
-        <%= image_tag 'ajax-loader.gif', class: 'loading'%><span class="js-link contact-send" data-send-to="<%= @user.id %>" data-receive-as="learner">Send request with your E-mail</span>
+        <h3><%=I18n.t('profile.learner')%>:</h3>
+        <%=I18n.t('price')%>: <%= prices(@user.learner) %><br />
+        <%=I18n.t('languages')%>: <%= langs(@user.learner) %><br />
+        <%= image_tag 'ajax-loader.gif', class: 'loading'%><span class="js-link contact-send" data-send-to="<%= @user.id %>" data-receive-as="learner"><%=I18n.t('profile.send_request')%></span>
       </div>
     <%end%>
   </div>

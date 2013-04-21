@@ -1,29 +1,29 @@
 <div class="main" id="search_form_block">
   <div class="wrap">
     <section class="search pull-left">
-      <h2>Search</h2>
+      <h2><%=I18n.t('search.headline')%></h2>
       <%= form_tag(search_path, remote: true, id: 'search_form') do %>
-        <%= label_tag :langs, 'Languages' %>
+        <%= label_tag :langs, I18n.t('languages') %>
         <%= text_field_tag :langs, nil, class: "search-input" %>
         <label class="radio first">
-          <%= radio_button_tag :who, 'teacher', true %> Teachers
+          <%= radio_button_tag :who, 'teacher', true %> <%=I18n.t('teachers')%>
         </label>
         <label class="radio">
-          <%= radio_button_tag :who, 'learner' %> Learners
+          <%= radio_button_tag :who, 'learner' %> <%=I18n.t('learners')%>
         </label>
-        <%= label_tag :price, 'Price ($ per hour):' %>
+        <%= label_tag :price, I18n.t('profile.price') %>
         <%= text_field_tag :price, nil, class: 'price-input', maxlength: 2 %>
         <label class="checkbox">
-          <%= check_box_tag :no_price_set, 1, true %>Also show <span id="who_no_price">teachers</span> who don't give price
+          <%= check_box_tag :no_price_set, 1, true %><%=I18n.t('search.include_no_price', person: "<span id='who_no_price'>#{I18n.t('search.teachers_no_price')}</span>").html_safe%>
         </label>
         <%= hidden_field_tag :offset, 0 %>
         <%= hidden_field_tag :result_count, 0 %>
-        <%= submit_tag 'Show Teachers ()', class: 'btn', id: 'submit_search' %>
+        <%= submit_tag "#{I18n.t('search.show_teachers')} ()", class: 'btn', id: 'submit_search' %>
         <%= image_tag 'ajax-loader.gif', class: 'loading' %>
       <%end%>
     </section>
     <section class="welcome pull-left">
-      <h1 id="who_header">Teachers</h1>
+      <h1 id="who_header"><%=I18n.t('search.teacher_title')%></h1>
     </section>
   </div>
   <div class="arr black"></div>
