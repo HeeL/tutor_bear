@@ -41,7 +41,7 @@ $(document).ready(function(){
   
   $('#sign_up_form, #sign_in_form').live('ajax:success', function(data, response, xhr) {
     if (response.status == 'success') {
-      window.location.href = current_lang + '/profile/edit'
+      window.location.href = '/' + current_lang + '/profile/edit'
     }
   });
   

@@ -5,6 +5,7 @@ gem 'rails', '3.2.11'
 gem 'pg'
 
 gem 'devise'
+gem 'cancan'
 gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'

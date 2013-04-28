@@ -41,6 +41,8 @@ en:
     default: 'Learn and Teach'
     users:
       edit: 'Profile Edit'
+    posts:
+      index: 'Articles about foreign languages'
   profile:
     updated: 'Profile updated'
     price: 'Price Range ($ per hour)'

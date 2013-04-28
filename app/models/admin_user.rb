@@ -1,9 +1,19 @@
 class AdminUser < ActiveRecord::Base
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role
+
+  def admin?
+    self.role == 'admin'
+  end
+
+  def editor?
+    self.role == 'editor'
+  end
+
+  def read_only?
+    self.role == 'read_only'
+  end
 
 end

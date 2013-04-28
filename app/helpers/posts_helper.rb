@@ -1,8 +1,8 @@
-module UserHelper
+module PostsHelper
 
   def page_title
     if params[:action] == 'show'
-      "#{I18n.t('user')} #{@user.name}"
+      @post.title
     else
       super
     end

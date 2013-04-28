@@ -12,3 +12,7 @@ ru:
       teacher:
         min_price: 'Минимальная цена'
         max_price: 'Максимальная цена'
+      post:
+        title: 'Название'
+        desc: 'Описание'
+        text: 'Текст'

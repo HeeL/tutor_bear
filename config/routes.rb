@@ -1,6 +1,8 @@
 TutorBear::Application.routes.draw do
   root to: 'pages#index'
 
+  get '/admin' => redirect('/en/admin')
+
   scope ":locale", locale: /en|ru/  do
     ActiveAdmin.routes(self)
 
@@ -8,6 +10,8 @@ TutorBear::Application.routes.draw do
 
     devise_for :admin_users, ActiveAdmin::Devise.config
     devise_for :users, skip: :sessions, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
+    resources :posts
 
     match 'users/sign_in' => redirect('/')
     match 'users/sign_out' => 'users#logout', as: :logout

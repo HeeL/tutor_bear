@@ -1,6 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  clear_helpers
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   before_filter :set_locale
+
+  helper_method :user_signed_in?, :current_user, :admin_user_signed_in?, :current_admin_user
+
+  def current_ability
+    @current_ability ||= Ability.new(current_admin_user)
+  end
 
   def set_success(text = '')
     {status: 'success', text: text}
