@@ -1,10 +1,30 @@
-#post {
-  p {
-    font-size: 14px;
+#posts {
+  .title {
+    font-size: 30px;
+    color: #ccc;
+    text-align: center;
+    margin: 20px 0;
+    font-family: Georgia;
+  }
+  h1 {
+    margin: 35px 0 2px 0;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: Georgia;
   }
 }
-.list-post {
-  .post-title {
-    font-size: 15px;
+
+#post {
+  h1 {
+    font-size: 30px;
+    font-family: Georgia;
+    font-weight: normal;
+    color: #555;
+    margin: 30px 0 20px 0;
+  }
+  .date {
+    font-style: italic;
+    color: #ccc;
+    float: right;
   }
 }

@@ -43,16 +43,22 @@
     </div>
   </header>
   
-  <%= on_root_page? ? yield : content_tag(:div, yield, :class => "wrap") %>
+  <%= on_root_page? ? yield : content_tag(:div, yield, class: "wrap") %>
   
   <div class="clearfix"></div>
-  <%= render partial: 'shared/feedback_form' %>
+  <%= render 'shared/feedback_form' %>
   
   <footer>
     <div class="wrap">
       <div class="pull-left">&copy; <%=Date.today.year%> TutorBear.net</div>
       <ul class="links pull-right">
-        <li><span class="js-link gray-link" id="feedback_link"><%=I18n.t('send_email')%></span></li>
+        <li>
+          <%=link_to t('blog'), posts_path%>
+           | 
+          <span class="js-link gray-link" id="feedback_link">
+            <%=t 'send_email'%>
+          </span>
+        </li>
       </ul>
     </div>
   </footer>

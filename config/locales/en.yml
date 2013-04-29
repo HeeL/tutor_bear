@@ -31,6 +31,7 @@ en:
   sign_up_btn: 'Register'
   sign_in_text: 'You can sign in with your'
   sign_in_btn: 'Login'
+  blog: 'Blog'
   search:
     headline: 'Search'
     include_no_price: "Also show %{person} who don't give price"
@@ -59,3 +60,6 @@ en:
     learner: 'teacher'
     sent: "We've sent your email to the %{receiver}"
     already_contacted: "That was less than a week ago when you last time shared your email with this person"
+  header_nav:
+    blog: 'You can also read our %{link}'
+    blog_link: 'Blog About Languages'

@@ -31,6 +31,7 @@ ru:
   sign_up_btn: 'Регистрация'
   sign_in_text: 'Вы можете войти с помощью'
   sign_in_btn: 'Войти'
+  blog: 'Блог'
   search:
     headline: 'Поиск'
     include_no_price: "Включить %{person}, которые не указали цену"
@@ -59,3 +60,6 @@ ru:
     learner: 'ученику'
     sent: 'Мы отправили ваш email данному %{receiver}'
     already_contacted: "Прошло менее недели с момента отправки запроса данному человеку"
+  header_nav:
+    blog: 'Вы можете также почитать %{link}'
+    blog_link: 'Наш Блог о Языках'

@@ -1,4 +1,9 @@
 <div id="post">
+  <% all_langs.each do |lang| %>
+    <%= link_to(image_tag("#{lang}.png"), url_for(locale: lang)) %>
+  <% end %>
+
   <h1><%=@post.title%></h1>
-  <p><%=@post.text%></p>
+  <p><%=sanitized_text(@post.text).html_safe%></p>
+  <div class="date"><%=@post.published_at.strftime('%d.%m.%Y')%></div>
 </div>

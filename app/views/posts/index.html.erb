@@ -1,1 +1,4 @@
-<%=render partial: 'list', collection: @posts, as: :post %>
+<div id="posts">
+  <div class="title"><%=t 'posts.header_text' %></div>
+  <%=render partial: 'list', collection: @posts, as: :post %>
+</div>

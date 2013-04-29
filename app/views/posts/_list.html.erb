@@ -1,6 +1,2 @@
-<div class="list-post">
-  <div class="post-title">
-    <%= link_to post.title, post_path(post)%>
-  </div>
-  <p><%=post.desc%></p>
-</div>
+<h1><%= link_to post.title, post_path(post)%></h1>
+<p><%=sanitized_text(post.desc).html_safe%></p>

@@ -2,22 +2,23 @@ require 'spec_helper'
 
 describe PostsController do
   before :each do
-    @today_post = FactoryGirl.create(:post)
+    @past_post = FactoryGirl.create(:post)
     @tomorrow_post = FactoryGirl.create(:post, published_at: Date.tomorrow)
   end
 
   context 'list' do  
     it "shows only published posts in list" do
       get :index
-      assigns('posts').should eq([@today_post])
+      assigns('posts').count.should eq(1)
+      assigns('posts').first.id.should eq(@past_post.id)
     end
   end
 
   context 'show' do
     context 'guests' do
       it "shows published posts" do
-        get :show, id: @today_post.id
-        assigns('post').should eq(@today_post)
+        get :show, id: @past_post.id
+        assigns('post').should eq(@past_post)
       end
 
       it "doesn't show unpublished posts" do
@@ -31,8 +32,8 @@ describe PostsController do
         sign_in FactoryGirl.create(:user)
       end
       it "shows published posts" do
-        get :show, id: @today_post.id
-        assigns('post').should eq(@today_post)
+        get :show, id: @past_post.id
+        assigns('post').should eq(@past_post)
       end
 
       it "doesn't show unpublished posts" do
@@ -52,8 +53,8 @@ describe PostsController do
       end
 
       it "shows published posts" do
-        get :show, id: @today_post.id
-        assigns('post').should eq(@today_post)
+        get :show, id: @past_post.id
+        assigns('post').should eq(@past_post)
       end
     end
   end
