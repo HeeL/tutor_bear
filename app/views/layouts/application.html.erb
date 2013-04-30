@@ -30,9 +30,9 @@
     <div class="top-bar">
       <div class="wrap">
         <% if user_signed_in? %>
-          <%= render 'shared/user_navi' %>
+          <%= render 'shared/nav/user_navi' %>
         <% else %>
-          <%= render 'shared/guest_navi' %>
+          <%= render 'shared/nav/guest_navi' %>
         <% end %>
         <div class="flags">
           <% all_langs.each do |lang| %>

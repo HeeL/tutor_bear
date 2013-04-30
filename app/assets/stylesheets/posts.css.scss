@@ -1,3 +1,8 @@
+#recent_posts {
+  li {
+    line-height: 180%;
+  }
+}
 #posts {
   .title {
     font-size: 30px;
@@ -26,5 +31,16 @@
     font-style: italic;
     color: #ccc;
     float: right;
+  }
+}
+
+#posts, #post {
+  img {
+    float: left;
+    padding: 10px 10px 0 0;
+  }
+  .right {
+    float: right;
+    padding: 10px 0 0 10px;
   }
 }

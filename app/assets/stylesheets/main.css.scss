@@ -57,9 +57,11 @@ p {
   text-transform:uppercase;
 }
 
-.right {
-  float: right;
-  margin-right: 100px;
+footer {
+  .right {
+    float: right;
+    margin-right: 100px;
+  }
 }
 
 #feedback_form {

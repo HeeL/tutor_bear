@@ -4,4 +4,6 @@ class Post < ActiveRecord::Base
 
   scope :published, where('published_at <= NOW()')
 
+  default_scope order('published_at DESC')
+
 end

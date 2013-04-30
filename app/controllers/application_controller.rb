@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   clear_helpers
-
+  include ApplicationHelper
+  
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
@@ -32,7 +33,7 @@ class ApplicationController < ActionController::Base
 
   private
   def set_locale
-    if TutorBear::Application::LANGS.include?(params[:locale].try(:to_sym))
+    if all_langs.include?(params[:locale].try(:to_sym))
       session[:current_lang] = I18n.locale = params[:locale]
     elsif session[:current_lang].present?
       I18n.locale = session[:current_lang] 

@@ -18,4 +18,13 @@ module ApplicationHelper
     "TutorBear: #{trans_title}"
   end
 
+  def convert_url(url)
+    Rack::Utils.escape(url).gsub('.', '1____1')
+  end
+
+  def revert_url(url)
+    Rack::Utils.unescape(url).gsub('1____1', '.')
+  end
+
+
 end

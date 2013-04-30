@@ -3,6 +3,9 @@ TutorBear::Application.routes.draw do
 
   get '/admin' => redirect('/en/admin')
 
+  get '/r/:path' => 'pages#redirect'
+  get '/i/:name' => 'pages#image'
+
   scope ":locale", locale: /en|ru/  do
     ActiveAdmin.routes(self)
 
