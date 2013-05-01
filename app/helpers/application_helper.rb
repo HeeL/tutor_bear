@@ -13,6 +13,14 @@ module ApplicationHelper
     TutorBear::Application::LANGS
   end
 
+  def show_flags
+    links = ''
+    all_langs.each do |lang|
+      links += link_to(image_tag("#{lang}.png", alt: I18n.t(lang), title: I18n.t(lang)), url_for(locale: lang))
+    end
+    links
+  end
+
   def page_title
     trans_title = I18n.t("page_title.#{params[:controller]}.#{params[:action]}", default: I18n.t('page_title.default'))
     "TutorBear: #{trans_title}"

@@ -1,2 +1,2 @@
 <h1><%= link_to post.title, post_path(post)%></h1>
-<p><%=sanitized_text(post.desc).html_safe%></p>
+<p><%=sanitized_text(post.desc, post.title).html_safe%></p>

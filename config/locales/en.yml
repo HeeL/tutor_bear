@@ -1,4 +1,6 @@
 en:
+  ru: 'Russian'
+  en: 'English'
   fail_log_in: "We've failed to log you in"
   auth_required: 'You have to sign in first'
   email_sent: 'Your message was sent to'
