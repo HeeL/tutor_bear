@@ -1,7 +1,7 @@
 <div class="wrap" id="header_nav">
   <%=raw t('header_nav.blog', link: link_to(t('header_nav.blog_link'), posts_path))%>
   <ul id="recent_posts">
-    <%Post.limit(3).each do |post|%>
+    <%Post.published.limit(3).each do |post|%>
       <li><%=link_to post.title, post_path(post)%></li>
     <%end%>
   </ul>

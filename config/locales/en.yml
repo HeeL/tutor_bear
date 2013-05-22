@@ -14,7 +14,7 @@ en:
   teachers: 'teachers'
   user: 'User'
   send_email: 'Send Email'
-  slogan: 'Learn Foreign Languages or Become an Online Teacher'
+  slogan: 'Learn Foreign Languages or Become a Teacher'
   show_more: 'Show More'
   name: 'Name'
   price: 'Price'
@@ -36,7 +36,7 @@ en:
   blog: 'Blog'
   search:
     headline: 'Search'
-    include_no_price: "Also show %{person} who don't give price"
+    include_no_price: "Also show %{person} who don't list price"
     show_teachers: 'Show Teachers'
     teachers_no_price: 'teachers'
     teacher_title: 'Teachers'
@@ -55,11 +55,11 @@ en:
     teach: 'Teach'
     learn: 'Learn'
     save: 'Save Changes'
-    public_email: 'Public your email (will be shown only for registered users)'
+    public_email: 'Publish your email (will be shown only to registered users)'
     send_request: 'Send request with your E-mail'
   contacts:
-    teacher: 'learner'
-    learner: 'teacher'
+    teacher: 'teacher'
+    learner: 'learner'
     sent: "We've sent your email to the %{receiver}"
     already_contacted: "That was less than a week ago when you last time shared your email with this person"
   header_nav:

@@ -4,9 +4,8 @@ class Search
 
   PER_PAGE = 25
 
-  def initialize(options, current_user)
+  def initialize(options)
     @options = options
-    @current_user = current_user
     find_users
   end
 
@@ -23,7 +22,6 @@ class Search
   def find_users
     add_who_condition
     add_price_condition
-    exclude_current_user
     add_lang_condition
   end
 
@@ -44,10 +42,6 @@ class Search
     elsif !@options[:no_price_set]
       @users = @users.where("min_price + max_price > 0")
     end
-  end
-
-  def exclude_current_user
-    @users = @users.where('users.id != ?', @current_user.id) if @current_user
   end
 
   def add_lang_condition

@@ -14,7 +14,7 @@ class SearchController < ApplicationController
   private
   
   def search
-    @search = Search.new(params, current_user)
+    @search = Search.new(params)
   end
 
 end
