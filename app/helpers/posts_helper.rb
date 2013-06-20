@@ -14,6 +14,20 @@ module PostsHelper
     fix_links text
   end
 
+  def show_comments
+    cmts = ''
+    @post.root_comments.each{|cmt| cmts += show_comment(cmt)}
+    cmts
+  end
+
+  def show_comment(cmt, level = 0)
+    cmts = render partial: 'posts/comment', locals: {cmt: cmt, level: level}
+    if cmt.has_children?
+      cmt.children.each{|c| cmts += show_comment(c, level + 1)}
+    end
+    cmts
+  end
+
   private
   def fix_links text
     text.gsub(/href=('|")(?!\/)([^\'\"]+)('|")/) do

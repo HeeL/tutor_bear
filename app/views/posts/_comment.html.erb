@@ -1,0 +1,11 @@
+<div style="margin-left: <%=level * 25%>px" class="cmt">
+  <b><%=cmt.name%></b>, <span class="date"><%=cmt.created_at.strftime('%d.%m.%Y (%H:%M)')%></span>
+  <div class="text"><%=cmt.text%></div>
+  <span class="cmt-reply">Reply</span>
+  <%=form_tag add_cmt_path, remote: true, id: "c#{cmt.id}", class: 'reply-form' do %>
+    <%= hidden_field_tag :cmt_id, cmt.id%>
+    <%= text_field_tag :name, nil, placeholder: 'Name'%> <br />
+    <%= text_area_tag :text, nil, cols: 20, rows: 4, placeholder: 'Text'%> <br />
+    <%=submit_tag 'Add comment'%>
+  <%end%>
+</div>

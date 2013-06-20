@@ -7,3 +7,5 @@
   <p><%=sanitized_text(@post.text, @post.title).html_safe%></p>
   <div class="date"><%=@post.published_at.strftime('%d.%m.%Y')%></div>
 </div>
+
+<%=render 'posts/comments'%>

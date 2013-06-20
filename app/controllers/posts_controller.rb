@@ -10,4 +10,8 @@ class PostsController < ApplicationController
     redirect_to posts_path unless @post
   end
 
+  def add_cmt
+    render text: '123'
+  end
+
 end

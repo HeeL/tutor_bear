@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
 
   validates :text, presence: true
 
-  attr_accessible :text, :commentable, :title, :parent_id
+  attr_accessible :text, :commentable, :name, :parent_id
 
   # NOTE: install the acts_as_votable plugin if you
   # want user to vote on the quality of comments.
@@ -14,9 +14,10 @@ class Comment < ActiveRecord::Base
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text
   # example in readme
-  def self.build_from(obj, comment)
+  def self.build_from(obj, comment, name)
     new \
       commentable: obj,
+      name: name,
       text: comment
   end
 

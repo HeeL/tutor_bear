@@ -14,6 +14,8 @@ TutorBear::Application.routes.draw do
     devise_for :admin_users, ActiveAdmin::Devise.config
     devise_for :users, skip: :sessions, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
+    post '/add_cmt' => 'posts#add_cmt', as: :add_cmt
+
     resources :posts
 
     match 'users/sign_in' => redirect('/')
