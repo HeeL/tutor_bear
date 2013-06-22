@@ -1,0 +1,7 @@
+<%=form_tag add_cmt_path, remote: true, data: {cmt_id: cmt ? cmt.id : '0'}, class: 'reply-form' do %>
+  <%= hidden_field_tag(:cmt_id, cmt.id) if cmt%>
+  <%= hidden_field_tag :post_id, @post.id%>
+  <%= text_field_tag :name, nil, placeholder: 'Name'%> <br />
+  <%= text_area_tag :text, nil, cols: 20, rows: 4, placeholder: 'Text'%> <br />
+  <%=submit_tag 'Add comment'%>
+<%end%>

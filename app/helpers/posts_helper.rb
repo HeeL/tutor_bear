@@ -20,6 +20,11 @@ module PostsHelper
     cmts
   end
 
+  def clean_cmt(cmt)
+    cmt = Nokogiri::HTML::DocumentFragment.parse(cmt).to_html
+    sanitize(cmt, tags: %w(b i u strong cite br))
+  end
+
   def show_comment(cmt, level = 0)
     cmts = render partial: 'posts/comment', locals: {cmt: cmt, level: level}
     if cmt.has_children?

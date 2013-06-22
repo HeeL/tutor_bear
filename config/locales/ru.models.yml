@@ -16,3 +16,6 @@ ru:
         title: 'Название'
         desc: 'Описание'
         text: 'Текст'
+      comment:
+        name: 'Имя'
+        text: 'Текст'

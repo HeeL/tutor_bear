@@ -11,7 +11,19 @@ class PostsController < ApplicationController
   end
 
   def add_cmt
-    render text: '123'
+    cmt = Comment.new(
+      commentable: Post.find(params[:post_id]),
+      name: params[:name],
+      text: params[:text]
+    )
+    cmt.parent_id = params[:cmt_id] if params[:cmt_id].present?
+
+    if !cmt.save
+      result = set_error(cmt.errors.full_messages.first)
+    else
+      result = set_success
+    end
+    render json: result
   end
 
 end

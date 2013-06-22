@@ -16,11 +16,18 @@
   .reply-form {
     display: none;
   }
-  .cmt-reply {
+  .cmt-reply, .cmt-add {
     font-size: 11px;
     color: #6DA3BD;
     cursor: pointer;
     border-bottom: 1px dashed;
+  }
+  .cmt-add {
+    font-size: 20px;
+    display: inline-block;
+  }
+  .cmt-add-block {
+    margin-top: 25px;
   }
 }
 

@@ -17,6 +17,7 @@ gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+gem 'nokogiri'
 
 group :assets do
   gem "therubyracer"

@@ -1,4 +1,10 @@
 <div id="comments">
   <h2>Comments: </h2>
   <%=show_comments.html_safe%>
+
+  <div class="cmt-add-block">
+    <span class="cmt-add">Leave a comment</span>
+    <%= render partial: 'add_cmt', locals: {cmt: false}%>
+    <%= render partial: 'cmt_sample', locals: {cmt_id: 0, level: 0}%>
+  </div>
 </div>
