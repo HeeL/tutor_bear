@@ -1,7 +1,7 @@
 <div style="margin-left: <%=level * 25%>px" class="cmt">
   <b><%=h cmt.name%></b>, <span class="date"><%=cmt.created_at.strftime('%d.%m.%Y (%H:%M)')%></span>
   <div class="text"><%=clean_cmt simple_format(cmt.text)%></div>
-  <span class="cmt-reply">Reply</span>
+  <span class="cmt-reply"><%=I18n.t('posts.comments.reply')%></span>
   <%= render partial: 'add_cmt', locals: {cmt: cmt}%>
 </div>
 

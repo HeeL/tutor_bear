@@ -1,3 +1,10 @@
 en:
   posts:
     header_text: "It's All About Langugages"
+    comments:
+      title: 'Comments`'
+      name: 'Name'
+      text: 'Text'
+      add: 'Add comment'
+      reply: 'Reply'
+      write: 'Leave a comment'
