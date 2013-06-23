@@ -14,7 +14,8 @@ class PostsController < ApplicationController
     cmt = Comment.new(
       commentable: Post.find(params[:post_id]),
       name: params[:name],
-      text: params[:text]
+      text: params[:text],
+      locale: I18n.locale
     )
     cmt.parent_id = params[:cmt_id] if params[:cmt_id].present?
 

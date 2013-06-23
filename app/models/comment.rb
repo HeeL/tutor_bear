@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
   validates :text, presence: true
   validates :name, presence: true
 
-  attr_accessible :text, :commentable, :name, :parent_id
+  attr_accessible :text, :commentable, :name, :parent_id, :locale
 
   belongs_to :commentable, polymorphic: true
 

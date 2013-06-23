@@ -16,7 +16,7 @@ module PostsHelper
 
   def show_comments
     cmts = ''
-    @post.root_comments.each{|cmt| cmts += show_comment(cmt)}
+    @post.root_comments.where(locale: I18n.locale).each{|cmt| cmts += show_comment(cmt)}
     cmts
   end
 
