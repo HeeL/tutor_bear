@@ -2,7 +2,7 @@ en:
   posts:
     header_text: "It's All About Langugages"
     comments:
-      title: 'Comments`'
+      title: 'Comments'
       name: 'Name'
       text: 'Text'
       add: 'Add comment'
