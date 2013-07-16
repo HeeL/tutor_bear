@@ -14,6 +14,26 @@ describe PostsController do
     end
   end
 
+  describe "#add_cmt" do
+    before :each do
+      @post = FactoryGirl.create(:post)
+    end
+
+    it "adds new comment" do
+      post :add_cmt, post_id: @post.id, name: 'test_name', text: 'test_text'
+      cmt = Comment.last
+      cmt.name.should eq('test_name')
+      cmt.text.should eq('test_text')
+    end
+
+    it "adds nested comment" do
+      parent_cmt = FactoryGirl.create(:comment, commentable: @post)
+      post :add_cmt, post_id: @post.id, cmt_id: parent_cmt.id, name: 'test_name', text: 'test_text'
+      cmt = Comment.last
+      cmt.parent_id.should eq(parent_cmt.id)
+    end
+  end
+
   context 'show' do
     context 'guests' do
       it "shows published posts" do

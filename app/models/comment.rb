@@ -14,11 +14,19 @@ class Comment < ActiveRecord::Base
     where(:commentable_type => commentable_str.to_s, :commentable_id => commentable_id).order('created_at DESC')
   }
 
+  after_create :notify
+
   def has_children?
     self.children.any?
   end
 
   def self.find_commentable(commentable_str, commentable_id)
     commentable_str.constantize.find(commentable_id)
+  end
+
+  private
+
+  def notify
+    NotifierMailer.new_comment(self).deliver
   end
 end
