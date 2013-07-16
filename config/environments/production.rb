@@ -11,6 +11,8 @@ TutorBear::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
+  config.action_mailer.default_url_options = { :host => 'tutorbear.net' }
+
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
