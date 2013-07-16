@@ -1,4 +1,4 @@
-New comment to an article: <%=link_to @post.title, post_path(id: @post, locale: 'en')%><br /><br />
+New comment to an article: <%=link_to @post.title, post_url(id: @post, locale: 'en')%><br /><br />
 
 Here is what it said: <br />
 <%=simple_format(@cmt_text)%>
