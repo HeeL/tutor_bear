@@ -21,6 +21,10 @@ class PostsController < ApplicationController
     save_and_render_result
   end
 
+  def delete_cmt
+    Comment.destroy(params[:id]) if admin_user_signed_in?
+  end
+
   private
 
   def save_and_render_result

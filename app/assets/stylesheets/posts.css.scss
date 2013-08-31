@@ -16,11 +16,19 @@
   .reply-form {
     display: none;
   }
-  .cmt-reply, .cmt-add {
+  .cmt-reply, .cmt-add, .cmt-delete {
     font-size: 11px;
     color: #6DA3BD;
     cursor: pointer;
     border-bottom: 1px dashed;
+  }
+  .cmt-delete {
+    margin-left: 10px;
+    border-bottom: 1px dashed #ff0000;
+    a {
+      text-decoration: none;
+      color: #ff0000;
+    }
   }
   .cmt-add {
     font-size: 20px;

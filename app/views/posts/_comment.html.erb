@@ -1,7 +1,8 @@
-<div style="margin-left: <%=level * 25%>px" class="cmt">
+<div style="margin-left: <%=level * 25%>px" id="cmt<%=cmt.id%>" class="cmt">
   <b><%=h cmt.name%></b>, <span class="date"><%=cmt.created_at.strftime('%d.%m.%Y (%H:%M)')%></span>
   <div class="text"><%=clean_cmt simple_format(cmt.text)%></div>
   <span class="cmt-reply"><%=I18n.t('posts.comments.reply')%></span>
+  <span class="cmt-delete"><%=link_to('Delete!', delete_cmt_path(id: cmt.id), remote: true) if admin_user_signed_in?%></span>
   <%= render partial: 'add_cmt', locals: {cmt: cmt}%>
 </div>
 

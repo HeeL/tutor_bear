@@ -15,6 +15,7 @@ TutorBear::Application.routes.draw do
     devise_for :users, skip: :sessions, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
     post '/add_cmt' => 'posts#add_cmt', as: :add_cmt
+    get '/delete_cmt/:id' => 'posts#delete_cmt', as: :delete_cmt
 
     resources :posts
 
