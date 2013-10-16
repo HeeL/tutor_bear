@@ -28,7 +28,8 @@ class PostsController < ApplicationController
   private
 
   def save_and_render_result
-    if !@cmt.save
+    if true || !@cmt.save
+      @cmt.errors.add(:base, 'Today we are closed. Please try again tomorrow.')
       result = set_error(@cmt.errors.full_messages.first)
     else
       result = set_success
