@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 
+  before_filter :check_spam, only: :add_cmt
+
+
   def index
     @posts = Post.published
   end
@@ -27,9 +30,13 @@ class PostsController < ApplicationController
 
   private
 
+  def check_spam
+    delay = params[:text].to_s.match(/(http|www)/) ? 30 : 15
+    params[:text] = '' if Time.now.to_i - params[:i].to_i < delay
+  end
+
   def save_and_render_result
-    if true || !@cmt.save
-      @cmt.errors.add(:base, 'Today we are closed. Please try again tomorrow.')
+    if !@cmt.save
       result = set_error(@cmt.errors.full_messages.first)
     else
       result = set_success
