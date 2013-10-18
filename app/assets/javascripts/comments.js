@@ -1,5 +1,9 @@
 $(document).ready(function(){
   track_remote_messages($('.reply-form'));
+
+  if($('#i').length) {
+    setInterval('$("#i").val(2);', 15000);
+  }
   
   $('.cmt-reply').on('click', function(e){
     $(e.target).parent().find('form').fadeIn();
