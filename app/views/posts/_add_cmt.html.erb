@@ -1,7 +1,7 @@
 <%=form_tag add_cmt_path, remote: true, data: {cmt_id: cmt ? cmt.id : '0'}, class: 'reply-form' do %>
   <%= hidden_field_tag(:cmt_id, cmt.id) if cmt%>
   <%= hidden_field_tag :post_id, @post.id%>
-  <%= hidden_field_tag :i, Time.now.to_i%>
+  <%= hidden_field_tag :i, 'true'%>
   <%= text_field_tag :name, nil, placeholder: I18n.t('posts.comments.name')%> <br />
   <%= text_area_tag :text, nil, cols: 20, rows: 4, placeholder: I18n.t('posts.comments.text')%> <br />
   <%=submit_tag I18n.t('posts.comments.add')%>

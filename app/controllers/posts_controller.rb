@@ -31,8 +31,7 @@ class PostsController < ApplicationController
   private
 
   def check_spam
-    delay = params[:text].to_s.match(/(http|www)/) ? 30 : 15
-    params[:text] = '' if Time.now.to_i - params[:i].to_i < delay
+    params[:text] = '' if params[:i] != '2'
   end
 
   def save_and_render_result
